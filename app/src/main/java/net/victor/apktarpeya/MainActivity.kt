@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun addTarea() {
-        val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+        val sdf = SimpleDateFormat("dd/M/yyyy HH:mm:ss")
         val currentDate = sdf.format(Date())
 
         alert {

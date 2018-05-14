@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "702728322478",
+    "firebase_url": "https://aplitarpeya-374c5.firebaseio.com",
+    "project_id": "aplitarpeya-374c5",
+    "storage_bucket": "aplitarpeya-374c5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:702728322478:android:582564e8b033ade9",
+        "android_client_info": {
+          "package_name": "net.victor.apktarpeya"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "702728322478-ho8fmd4fn9ajjqd9ejbdm04barep2oja.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.victor.apktarpeya",
+            "certificate_hash": "4331427dfe8063d761a9ea3deda37bcec363eb98"
+          }
+        },
+        {
+          "client_id": "702728322478-nq830bgm1mosf3er8h57q41r2lipib6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrB7Dpv31dHqMdVkehBJdd0zokwK8Av8E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "702728322478-nq830bgm1mosf3er8h57q41r2lipib6k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

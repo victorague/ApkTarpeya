@@ -27,7 +27,7 @@
 
         <TextView
             android:id="@+id/tvTarea"
-            android:layout_width="285dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/lblTarea"
             android:layout_alignParentStart="true"
@@ -46,10 +46,10 @@
 
         <TextView
             android:id="@+id/tvDetalle"
-            android:layout_width="285dp"
+            android:layout_width="200dp"
             android:layout_height="47dp"
             android:layout_alignBaseline="@+id/lblDetalle"
-            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
             android:text="Detalle" />
 
         <TextView
