@@ -7,15 +7,21 @@ import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import com.google.firebase.database.*
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import net.victor.apktarpeya.R.layout.array_vacio
+import net.victor.apktarpeya.R.layout.content_main
 import net.victor.apktarpeya.adapter.CustomAdapter
 import net.victor.apktarpeya.model.Tarea
 import org.jetbrains.anko.*
 import java.text.SimpleDateFormat
 import java.util.*
+import java.nio.file.Files.size
+
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +33,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var refTareas: DatabaseReference
     private lateinit var tareas: ArrayList<Tarea>
     private lateinit var adapter: CustomAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +51,17 @@ class MainActivity : AppCompatActivity() {
         adapter = CustomAdapter(this, R.layout.row_tarea, tareas, refTareas)
         rvTareas.adapter = adapter
 
+        fun comprobarArrayVacio() {
+            if (adapter.itemCount == 0
+            ) {
+                tvTareasCompletadas.text = "Todas las tareas completadas"
+            } else {
+                tvTareasCompletadas.text = ""
+
+            }
+
+        }
+
 
         // Read from the database
         refTareas.addValueEventListener(object : ValueEventListener {
@@ -55,18 +73,28 @@ class MainActivity : AppCompatActivity() {
                     val tarea = dataSnapshothijo.getValue(Tarea::class.java)
                     tarea!!.id = keyListener
                     tareas.add(tarea!!)
+
                 }
                 adapter.notifyDataSetChanged()
+                comprobarArrayVacio()
             }
 
             override fun onCancelled(error: DatabaseError) {
                 // Failed to read value
                 Log.e(TAG, "Error de lectura.", error.toException())
+                comprobarArrayVacio()
             }
         })
 
+
+
+
+
+
+
         fab.setOnClickListener { view ->
             addTarea()
+            comprobarArrayVacio()
         }
 
 
@@ -96,6 +124,7 @@ class MainActivity : AppCompatActivity() {
                         else {
                             val tarea = Tarea("", etTarea.text.toString(), etDescripcion.text.toString(), currentDate)
                             refTareas.push().setValue(tarea)
+
                         }
                     }
                 }

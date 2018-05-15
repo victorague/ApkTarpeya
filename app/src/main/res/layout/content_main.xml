@@ -9,22 +9,34 @@
     tools:showIn="@layout/activity_main">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvTareas"
         android:layout_width="match_parent"
-        android:layout_height="31dp"
-        android:text="TAREAS"
-        android:gravity="center"
+        android:layout_height="70dp"
         android:background="@color/colorPrimary"
-        android:textSize="28dp" />
+        android:gravity="center"
+        android:text="TAREAS"
+        android:textColor="@android:color/white"
+        android:textSize="28dp"
+        android:textStyle="bold" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvTareas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="33dp">
+        android:layout_below="@+id/tvTareas">
 
     </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/tvTareasCompletadas"
+        android:textAlignment="center"
+        android:layout_width="271dp"
+        android:layout_height="85dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="223dp"
+        android:text="Hemos completado todas las tareas, ¡Bien Hecho!"
+        android:textSize="20sp" />
 
 </RelativeLayout>

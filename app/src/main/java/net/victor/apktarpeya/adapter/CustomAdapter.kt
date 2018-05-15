@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.RelativeLayout
 import com.google.firebase.database.DatabaseReference
 import kotlinx.android.synthetic.main.row_tarea.view.*
+import net.victor.apktarpeya.R.id.tvTareasCompletadas
 import net.victor.apktarpeya.model.Tarea
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.noButton
@@ -29,6 +30,8 @@ class CustomAdapter (val context: Context,
 
     //private lateinit var recetaException : DatabaseError
     //private lateinit var unit : Unit
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
